@@ -22,7 +22,5 @@ jobs:
         with:
           node-version: 20
       - run: npm install
-      - run: npm run build # 假设有一个构建脚本
-      - run: npx electron-builder --win # 使用 electron-builder 打包为 Windows 可执行文件
-        env:
-          ELECTRON_CACHE: ${{ runner.temp }}/electron
+      - run: npm run build
+      - run: npx electron-builder --win
