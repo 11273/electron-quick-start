@@ -19,7 +19,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^33.2.0",
-    "electron-builder": "^24.6.0"  // 添加 electron-builder 作为开发依赖
+    "electron-builder": "^24.6.0"
   },
   "build": {
     "appId": "com.example.electronapp",
