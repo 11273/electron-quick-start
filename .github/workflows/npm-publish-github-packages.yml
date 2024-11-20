@@ -1,0 +1,30 @@
+name: Electron Package
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm test
+
+  package-electron:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build # 假设有一个构建脚本
+      - run: npx electron-builder --win # 使用 electron-builder 打包为 Windows 可执行文件
+        env:
+          ELECTRON_CACHE: ${{ runner.temp }}/electron
