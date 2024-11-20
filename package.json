@@ -25,6 +25,7 @@
     "appId": "com.example.electronapp",
     "win": {
       "target": "nsis"
-    }
+    },
+    "publish": null,
   }
 }
