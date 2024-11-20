@@ -15,3 +15,8 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npx electron-builder --win
+      - name: 上传构建产物
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-electron-app
+          path: dist/
